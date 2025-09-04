@@ -1,18 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type Animal struct {
-	Name    string
-	Species string
-	Age     int
-}
+	"github.com/akozadaev/go_oop/2_method/person"
+)
 
 func main() {
-	animal := Animal{"Дик", "Собака", 5}
-	animalCat := Animal{"Майя", "Кошка", 1}
-	fmt.Println(animal)
-	fmt.Println(
-		fmt.Sprintf("Кличка: %s,\n что за зверь: %s,\n возраст: %d год (лет)", animalCat.Name, animalCat.Species, animalCat.Age),
-	)
+	introduceString := person.Person{"Алексей", "Козадаев"}.Introduce()
+	fmt.Println(introduceString)
+
+	person1 := person.Person{FirstName: "Алексей", LastName: "Козадаев"}
+	introduceString = person1.Introduce()
+	fmt.Println(introduceString)
 }

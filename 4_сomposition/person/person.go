@@ -1,10 +1,23 @@
-package person1
+package person
 
 import "fmt"
+
+type Address struct {
+	City string
+}
 
 type Person struct {
 	firstName string
 	lastName  string
+	address   Address
+}
+
+func (p *Person) GetAddress() Address {
+	return p.address
+}
+
+func (p *Person) SetAddress(address Address) {
+	p.address = address
 }
 
 func (p *Person) GetFirstName() string {
@@ -24,5 +37,5 @@ func (p *Person) GetLastName() string {
 }
 
 func (p *Person) Introduce() string {
-	return fmt.Sprintf("Привет, я %s %s", p.firstName, p.lastName)
+	return fmt.Sprintf("Привет, я %s %s из %sа", p.firstName, p.lastName, p.address.City)
 }

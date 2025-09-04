@@ -1,3 +1,3 @@
-module incaps
+module compose
 
 go 1.24.6
